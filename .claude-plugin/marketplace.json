@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "archi",
+  "description": "Marketplace du plugin archi.",
+  "owner": { "name": "Baptiste JARYS" },
+  "plugins": [
+    {
+      "name": "archi",
+      "source": "./",
+      "description": "Architecte (Fable) / exécutants (Sonnet, Opus) / relecteur (Sonnet) pour économiser Fable.",
+      "version": "0.1.0"
+    }
+  ]
+}
