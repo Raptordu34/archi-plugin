@@ -1,6 +1,6 @@
 {
   "name": "archi",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Architecte / exécutant : la session principale (Fable) réfléchit et écrit un PLAN.md, des sous-agents moins chers (Sonnet, Opus) implémentent, un relecteur indépendant vérifie, et les remontées ne rechargent aucun contexte.",
   "author": { "name": "Baptiste JARYS" },
   "repository": "https://github.com/Raptordu34/archi-plugin",

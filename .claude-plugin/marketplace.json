@@ -8,7 +8,7 @@
       "name": "archi",
       "source": "./",
       "description": "Architecte (Fable) / exécutants (Sonnet, Opus) / relecteur (Sonnet) pour économiser Fable.",
-      "version": "0.1.0"
+      "version": "0.1.1"
     }
   ]
 }

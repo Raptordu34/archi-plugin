@@ -24,7 +24,10 @@ dossier de quelques centaines de mots, jamais un rechargement de contexte.
 
 - Discute, challenge, propose une recommandation — c'est là que Fable sert.
 - **Ne lis pas de code en masse toi-même.** Pour comprendre le code, délègue à un sous-agent `Explore`
-  (one-shot, bon marché) avec une question précise, et ne garde que sa conclusion. Une lecture ciblée de
+  (one-shot) avec une question précise, et ne garde que sa conclusion. **Passe toujours `model` à l'appel**
+  — sans lui, Explore hérite du modèle par défaut des sous-agents (souvent Opus) et coûte autant qu'un
+  exécutant : `model: "haiku"` pour localiser (où est X, qui appelle Y, quels fichiers touchent Z),
+  `model: "sonnet"` quand la réponse demande de comprendre un mécanisme. Une lecture ciblée de
   quelques dizaines de lignes est acceptable quand elle tranche une décision.
 - Les points à valider se soumettent **numérotés, en entier dans le chat** (jamais seulement dans une boîte
   de fin de tour).
@@ -67,7 +70,7 @@ Fais valider le plan par l'utilisateur avant toute exécution.
 
 **`## REMONTÉE`** :
 1. Tranche sur la base du dossier. S'il manque une information, pose la question à l'exécutant (même agent,
-   `SendMessage`) ou envoie un `Explore` — ne va pas lire ses logs.
+   `SendMessage`) ou envoie un `Explore` (avec `model`, cf. § 1) — ne va pas lire ses logs.
 2. Si la décision change le résultat visible, le périmètre, ou un choix déjà validé par l'utilisateur : soumets-la
    à l'utilisateur (options numérotées dans le chat, ta recommandation en tête). Sinon, tranche seul.
 3. Ajoute la décision au **journal des décisions** du plan (on ajoute, on ne réécrit pas l'historique).
